@@ -1,6 +1,7 @@
 import { ConnectWallet } from './components/ConnectWallet'
 import { SendTransaction } from './components/SendTransaction'
 import { TokenBalance } from './components/TokenBalance'
+import { SendToken } from './components/SendToken'
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <ConnectWallet />
       <SendTransaction />
       <TokenBalance />
+      <SendToken />
     </div>
   )
 }

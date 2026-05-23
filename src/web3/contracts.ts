@@ -1,4 +1,4 @@
-export const tokenAddress = '0x1c7d4b196cb0c7b01d743fbc6116a902379c7238'
+export const tokenAddress = '0x1c7d4b196cb0c7b01d743fbc6116a902379c7238' as `0x${string}`
 
 export const tokenAbi = [
   {
@@ -22,4 +22,14 @@ export const tokenAbi = [
     inputs: [],
     outputs: [{ type: 'string' }],
   },
-]
+  {
+  name: 'transfer',
+  type: 'function',
+  stateMutability: 'nonpayable',
+  inputs: [
+    { name: 'to', type: 'address' },
+    { name: 'amount', type: 'uint256' },
+  ],
+  outputs: [{ type: 'bool' }],
+}
+] as const
