@@ -1,19 +1,21 @@
-import { useAccount, useConnect, useDisconnect } from 'wagmi'
+import { useAccount, useConnect, useDisconnect } from "wagmi";
 
 export function ConnectWallet() {
-  const { address, isConnected } = useAccount()
-  const { connect, connectors } = useConnect()
-  const { disconnect } = useDisconnect()
+  const { address, isConnected } = useAccount();
+  const { connect, connectors } = useConnect();
+  const { disconnect } = useDisconnect();
+
+  function formatAddress(address: string) {
+    return address.slice(0, 6) + "..." + address.slice(-4);
+  }
 
   if (isConnected) {
     return (
       <div>
-        <p>Connected: {address}</p>
-        <button onClick={() => disconnect()}>
-          Disconnect
-        </button>
+        <p>Connected: {formatAddress(address)}</p>
+        <button onClick={() => disconnect()}>Disconnect</button>
       </div>
-    )
+    );
   }
 
   return (
@@ -24,5 +26,5 @@ export function ConnectWallet() {
         </button>
       ))}
     </div>
-  )
+  );
 }

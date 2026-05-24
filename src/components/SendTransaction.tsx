@@ -78,7 +78,7 @@ export function SendTransaction() {
         {isPending ? "Sending..." : "Send"}
       </button>
 
-      {hash && <p>Tx Hash: {hash}</p>}
+      {hash && <p style={{ wordBreak: "break-all" }}>Tx Hash: {hash}</p>}
       {isConfirming && <p>Waiting for confirmation...</p>}
       {isSuccess && <p>Transaction confirmed ✅</p>}
       {error && <p>Error: {error.message}</p>}

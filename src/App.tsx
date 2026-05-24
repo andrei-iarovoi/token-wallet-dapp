@@ -43,7 +43,7 @@ function App() {
           <SendTransaction />
         </div>
 
-        <h3 style={{ marginBottom: "10px" }}>Send Token</h3>
+        <h3 style={{ marginBottom: "10px" }}>Send Token (USDC)</h3>
         <div style={{ marginBottom: "20px" }}>
           <SendToken />
         </div>
