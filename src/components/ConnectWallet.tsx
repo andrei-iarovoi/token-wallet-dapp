@@ -7,10 +7,6 @@ export function ConnectWallet() {
   const { disconnect } = useDisconnect();
   const [copied, setCopied] = useState(false);
 
-  function formatAddress(address: string) {
-    return address.slice(0, 6) + "..." + address.slice(-4);
-  }
-
   if (isConnected) {
     return (
       <div>
@@ -27,7 +23,9 @@ export function ConnectWallet() {
         >
           Connected: {address?.slice(0, 6)}...{address?.slice(-4)}
         </p>
-        {copied && <span className="copy-feedback">Copied!</span>}
+        {copied && (
+          <span style={{ fontSize: "12px", color: "#22c55e" }}>Copied!</span>
+        )}
         <button onClick={() => disconnect()}>Disconnect</button>
       </div>
     );
