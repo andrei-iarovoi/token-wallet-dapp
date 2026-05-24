@@ -1,9 +1,11 @@
 import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { useState } from "react";
 
 export function ConnectWallet() {
   const { address, isConnected } = useAccount();
   const { connect, connectors } = useConnect();
   const { disconnect } = useDisconnect();
+  const [copied, setCopied] = useState(false);
 
   function formatAddress(address: string) {
     return address.slice(0, 6) + "..." + address.slice(-4);
@@ -14,11 +16,18 @@ export function ConnectWallet() {
       <div>
         <p
           className="copy-address"
-          onClick={() => navigator.clipboard.writeText(address!)}
+          onClick={() => {
+            navigator.clipboard.writeText(address!);
+            setCopied(true);
+
+            setTimeout(() => {
+              setCopied(false);
+            }, 1500);
+          }}
         >
           Connected: {address?.slice(0, 6)}...{address?.slice(-4)}
         </p>
-
+        {copied && <span className="copy-feedback">Copied!</span>}
         <button onClick={() => disconnect()}>Disconnect</button>
       </div>
     );

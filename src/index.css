@@ -19,6 +19,12 @@ body {
   color: #3b82f6;
 }
 
+.copy-feedback {
+  font-size: 12px;
+  color: #22c55e;
+  margin-left: 5px;
+}
+
 .break-text {
   word-break: break-all;
   overflow-wrap: break-word;
