@@ -85,10 +85,21 @@ export function SendToken() {
         {isPending ? "Sending..." : "Send Token"}
       </button>
 
-      {hash && <p>Tx Hash: {hash}</p>}
+      {hash && <p className="break-text">Tx Hash: {hash}</p>}
       {isConfirming && <p>Confirming...</p>}
       {isSuccess && <p>Transaction successful ✅</p>}
-      {error && <p>Error: {error.message}</p>}
+      {error && (
+        <p
+          style={{
+            wordBreak: "break-all",
+            overflowWrap: "break-word",
+            maxWidth: "100%",
+            color: "#f87171",
+          }}
+        >
+          Error: {error.message}
+        </p>
+      )}
     </div>
   );
 }

@@ -78,10 +78,14 @@ export function SendTransaction() {
         {isPending ? "Sending..." : "Send"}
       </button>
 
-      {hash && <p style={{ wordBreak: "break-all" }}>Tx Hash: {hash}</p>}
+      {hash && <p className="break-text">Tx Hash: {hash}</p>}
       {isConfirming && <p>Waiting for confirmation...</p>}
       {isSuccess && <p>Transaction confirmed ✅</p>}
-      {error && <p>Error: {error.message}</p>}
+      {error && (
+        <p className="break-text" style={{ color: "#f87171" }}>
+          Error: {error.message}
+        </p>
+      )}
     </div>
   );
 }
