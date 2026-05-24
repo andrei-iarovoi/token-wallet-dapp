@@ -12,7 +12,13 @@ export function ConnectWallet() {
   if (isConnected) {
     return (
       <div>
-        <p>Connected: {formatAddress(address)}</p>
+        <p
+          className="copy-address"
+          onClick={() => navigator.clipboard.writeText(address!)}
+        >
+          Connected: {address?.slice(0, 6)}...{address?.slice(-4)}
+        </p>
+
         <button onClick={() => disconnect()}>Disconnect</button>
       </div>
     );

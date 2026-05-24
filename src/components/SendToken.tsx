@@ -85,7 +85,20 @@ export function SendToken() {
         {isPending ? "Sending..." : "Send Token"}
       </button>
 
-      {hash && <p className="break-text">Tx Hash: {hash}</p>}
+      {hash && (
+        <a
+          href={`https://sepolia.etherscan.io/tx/${hash}`}
+          target="_blank"
+          style={{
+            color: "#3b82f6",
+            fontSize: "12px",
+            display: "block",
+            marginTop: "5px",
+          }}
+        >
+          View on Etherscan
+        </a>
+      )}
       {isConfirming && <p>Confirming...</p>}
       {isSuccess && <p>Transaction successful ✅</p>}
       {error && (
