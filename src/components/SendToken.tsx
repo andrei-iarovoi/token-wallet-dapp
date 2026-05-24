@@ -55,8 +55,8 @@ export function SendToken() {
       <input
         type="text"
         placeholder="Amount"
-        value={to}
-        onChange={(e) => setTo(e.target.value)}
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
         style={{
           width: "100%",
           padding: "10px",
