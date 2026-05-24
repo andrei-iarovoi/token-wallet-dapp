@@ -21,7 +21,7 @@ export function SendTransaction() {
     if (!to || !amount) return;
 
     sendTransaction({
-      to,
+      to: to as `0x${string}`,
       value: parseEther(amount),
     });
   };
