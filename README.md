@@ -1,73 +1,122 @@
-# React + TypeScript + Vite
+# 🪙 Token Wallet dApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple decentralized application (dApp) for interacting with Ethereum and ERC20 tokens.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📸 Preview
 
-## React Compiler
+![App Preview](./public/screenshots/main.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🔗 Connect wallet (MetaMask / injected wallets)
+- 💰 View ETH balance
+- 🪙 View ERC20 token balance (USDC)
+- 📤 Send ETH transactions
+- 💸 Send ERC20 tokens
+- 🔍 Track transaction status
+- 🔗 View transactions on Etherscan
+- 📋 Copy wallet address & transaction hash
+- ⚠️ Basic error handling and validation
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠 Tech Stack
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React + TypeScript**
+- **Vite**
+- **wagmi**
+- **viem**
+- **Sepolia testnet**
+
+---
+
+## 🌐 Live Demo
+
+👉 https://token-wallet-dapp.vercel.app/
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/andrei-iarovoi/token-wallet-dapp
+cd token-wallet-dapp
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## ⚙️ Usage
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Connect your wallet
+2. Switch to **Sepolia network**
+3. View your ETH and token balances
+4. Send ETH or USDC tokens
+5. Track transaction status
+
+---
+
+## 📸 Screenshots
+
+### 🟢 Main UI
+
+![Main](./public/screenshots/main.png)
+
+### 🔗 Wallet Connected
+
+![Wallet](./public/screenshots/wallet.png)
+
+### 📤 Send Transaction
+
+![Send](./public/screenshots/send.png)
+
+### ✅ Success State
+
+![Success](./public/screenshots/success.png)
+
+---
+
+## ⚠️ Notes
+
+- Works on **Sepolia testnet**
+- Requires test ETH (faucet):
+  - https://sepoliafaucet.com/
+
+- Token used: **USDC (test deployment)**
+
+---
+
+## 🧠 What I Learned
+
+- Working with **wagmi & viem**
+- Handling blockchain transactions and states
+- Managing async flows (pending, success, error)
+- Building basic Web3 UX (copy, feedback, status)
+- Applying TypeScript in Web3 context
+
+---
+
+## 🔮 Future Improvements
+
+- Toast notifications
+- Improved UI/UX (cards, animations)
+- Wallet selector (RainbowKit / ConnectKit)
+- Better validation and error handling
+- Multi-token support
+
+---
+
+## 👨‍💻 Author
+
+- GitHub: https://github.com/andrei-iarovoi/token-wallet-dapp
+
+---
+
+## 📄 License
+
+MIT
