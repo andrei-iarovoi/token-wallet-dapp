@@ -95,8 +95,8 @@ export function SendTransaction() {
       {isConfirming && <p>Waiting for confirmation...</p>}
       {isSuccess && <p>Transaction confirmed ✅</p>}
       {error && (
-        <p className="break-text" style={{ color: "#f87171" }}>
-          Error: {error.message}
+        <p style={{ color: "#ef4444", fontSize: "14px" }}>
+          Invalid address or transaction failed
         </p>
       )}
     </div>

@@ -102,15 +102,8 @@ export function SendToken() {
       {isConfirming && <p>Confirming...</p>}
       {isSuccess && <p>Transaction successful ✅</p>}
       {error && (
-        <p
-          style={{
-            wordBreak: "break-all",
-            overflowWrap: "break-word",
-            maxWidth: "100%",
-            color: "#f87171",
-          }}
-        >
-          Error: {error.message}
+        <p style={{ color: "#ef4444", fontSize: "14px" }}>
+          Invalid address or transaction failed
         </p>
       )}
     </div>
